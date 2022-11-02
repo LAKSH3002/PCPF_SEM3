@@ -16,4 +16,7 @@ gives(john,book,marry).
 superstar(srk).
 bestdancer(Hrithik).
 
-These are some of the facts declaration in prolog
+// These are some of the facts declaration in prolog
+// variables begin with capital letter
+// facts are some statements that never change
+// rules are soeme statements/things that needs to be followed in order to maintain the fact.
