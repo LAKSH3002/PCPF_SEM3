@@ -1,0 +1,36 @@
+| ?- a = a.        ** Two identical atoms unify **
+yes
+| ?- a = b.        ** Atoms don't unify if they aren't identical **
+no
+| ?- X = a.        ** Unification instantiates a variable to an atom **
+     X=a 
+yes
+| ?- X = Y.        ** Unification binds two differently named variables **
+     X=_125451     ** to a single, unique variable name **
+     Y=_125451
+yes
+| ?- foo(a,b) = foo(a,b).       ** Two identical complex terms unify **
+yes
+| ?- foo(a,b) = foo(X,Y).       ** Two complex terms unify if they are **
+     X=a                        ** of the same arity, have the same principal**
+     Y=b                        ** functor and their arguments unify **
+yes
+| ?- foo(a,Y) = foo(X,b).       ** Instantiation of variables may occur **
+     Y=b                        ** in either of the terms to be unified **
+     X=a 
+yes
+| ?- foo(a,b) = foo(X,X).       ** In this case there is no unification **
+no                              ** because foo(X,X)  must have the same **
+                                ** 1st and 2nd arguments **
+| ?- 2*3+4 = X+Y.       ** The term 2*3+4 has principal functor + **
+     X=2*3              ** and therefore unifies with X+Y with X instantiated**
+     Y=4                ** to 2*3 and Y instantiated to 4 **
+yes
+| ?- [a,b,c] = [X,Y,Z]. ** Lists unify just like other terms **
+     X=a
+     Y=b
+     Z=c 
+yes
+| ?- [a,b,c] = [X|Y].   ** Unification using the '|' symbol  can be used **
+     X=a                ** to find the head element, X, and tail list, Y, **
+     Y=[b,c]            ** of a list **
