@@ -1,0 +1,41 @@
+// code for multiple inheritance
+#include<iostream>
+
+class square  // class 1
+{
+    protected: 
+    int lside,area,peri;
+    public:
+    square(){}
+};
+class lawncost{   // class 2
+    protected:int l_rate;
+    public: 
+    lawncost() {}
+};
+class fencecost  // class 3
+{
+    protected: int f_rate;
+    public:
+    fencecost()
+    {}
+};
+class compound : public square,public lawncost,public fencecost{ 
+    // class compound inheriting from various other classes to perform its own opertaion.
+    public:
+    compound(int l,int lrt,int frt) // constructors
+    {
+        lside=l;
+        l_rate = lrt;
+        f_rate = frt;
+        area=lside*lside;
+        peri = 4*lside;
+        std::cout << "The area and perimeter of square compound of length of side " << lside<< " units are " << area <<" sq units and " << peri <<" units respectively" << std::endl; 
+        std::cout << "The cost of making a lawn is " << area*l_rate << " Rupees and the cost of fencing is " << peri*f_rate << " Rupees " << std::endl; 
+    }
+};
+int main()
+ {
+     compound(5,3,5); return 0; 
+     
+ }   
