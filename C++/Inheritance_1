@@ -1,4 +1,4 @@
-// Single Inherutance: is-A relationship
+// Single Inheritance: is-A relationship
 #include <iostream>
 
 class regpoly
@@ -6,7 +6,7 @@ class regpoly
     private: int nsides;
     protected: int lsides;
     public:
-    regpoly() // default constructor necessary depending on the compiler
+    regpoly() // default constructor necessary in base class depending on the compiler
     {}
     regpoly(int n,int l){ // parmaterised constructor
         nsides = n;
