@@ -1,0 +1,32 @@
+#include<iostream>
+#include<thread>
+#include<stdlib.h>
+using namespace std;
+void task1(int n)
+{
+    int i;
+    for(i=1;i<11;i++)
+    {
+        cout<<n<<" * "<<i<<"="<<(i*n)<<endl;
+    }
+}
+void task2()
+{
+    for(char c = 'A';c<='Z';c++){
+        cout<<c<<endl;
+    }
+}
+int main()
+{
+    int num;
+    cout<<"ENTER A NUMBER"<<endl;
+    cin>>num;
+    
+    std::thread t1(task1,num);
+    std::thread t2(task2);
+    
+    t1.join();
+    t2.join();
+    return 0;
+}
+
