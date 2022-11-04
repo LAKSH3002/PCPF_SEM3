@@ -17,7 +17,7 @@ public class merge_sort {
         int b[] = new int[100];
         i=low;
         j=mid+1;
-        k=low;  // MISTAKE
+        k=low;  
         while(i<=mid && j<=high)
         {
             if(a[i]<a[j])
