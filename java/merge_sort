@@ -1,9 +1,5 @@
 public class merge_sort {
 
-//    void mergesort(int a[],int low,int high);
-//    void printarray(int a[] , int n);
-//    void merge(int a[],int mid,int low,int high);
-
     public void mergesort(int a[],int low ,int high)
     {
         int mid;
