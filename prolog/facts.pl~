@@ -1,0 +1,22 @@
+
+likes(laksh,kiara).
+likes(jane,wine).
+likes(mary,wine).
+likes(jooy, breads).
+likes(john,X):- likes(X,wine).
+
+
+valuable(gold).
+james(harry, potter,written).
+
+laksh(boy).
+jay(boy).
+
+father(john,mary).
+gives(john,book,marry).
+
+srk(superstar).
+hrithikroshan(bestdancer).
+
+
+
