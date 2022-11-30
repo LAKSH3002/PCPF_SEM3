@@ -1,0 +1,51 @@
+// overloading and overriding in one program
+// Online C++ compiler to run C++ program online
+// program for overrdiing principle
+// in this program the props function of isoceles class overrided the props function of
+#include <iostream>
+using namespace std;
+class triangle {
+    public: void props(int b1,int h1)
+    {
+        cout<<"TRIANGLE HAS 3 SIDES"<<endl;
+        // int b1,h1;
+        cout<<"AREA IS "<<endl;
+        int ar = b1*h1*1/2;
+        cout<<ar;
+    }
+    public: void props(int b1,double h1) // overloading
+    {
+        cout<<"TRIANGLE HAS 3 SIDES"<<endl;
+       // int b1,h1;
+        cout<<"AREA IS "<<endl;
+        int ar = 0.5*b1*h1;
+        cout<<ar;
+    }
+};
+class isoceles: public triangle
+{
+    public: void props(int b2,int h2) // overriding of parent class
+    {
+        cout<<"TRIANGLE HAS 2 EQUAL SIDES"<<endl;
+        cout<<"AREA IS "<<endl;
+        int ar1 = 2*b2*h2*b2;
+        cout<<ar1;
+    }
+    public :void props(int b2,double h2)
+    {
+        cout<<"TRIANGLE HAS 2 EQUAL SIDES"<<endl;
+        int b;
+        double h;
+        cout<<"AREA IS "<<endl;
+        double ar1 = 2*b2*h2*b2;
+        cout<<ar1;
+    }
+};
+
+int main() {
+    isoceles i;
+    i.props(6,8.5);
+    triangle t;
+    t.props(7,3.5);
+    return 0;
+}
